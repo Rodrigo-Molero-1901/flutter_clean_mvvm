@@ -1,0 +1,9 @@
+main_locale: es
+arb-dir: lib/src/core/l10n
+output-dir: lib/src/core/l10n
+output-localization-file: app_l10n.dart
+output-class: AppLocalizations
+template-arb-file: intl_es.arb
+format: true
+synthetic-package: false
+nullable-getter: false
