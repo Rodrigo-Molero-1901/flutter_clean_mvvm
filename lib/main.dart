@@ -13,7 +13,7 @@ Future<void> main() async {
     DeviceOrientation.portraitDown,
     DeviceOrientation.portraitUp,
   ]);
-  // await configureModuleDependencies();
+  await configureModuleDependencies();
   runApp(const FlutterCleanMVVM());
 }
 
