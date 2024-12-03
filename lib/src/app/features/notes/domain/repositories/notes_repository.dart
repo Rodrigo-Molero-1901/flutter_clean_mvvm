@@ -9,4 +9,8 @@ abstract class NotesRepository {
   Future<Either<ApiError, NoteModel>> createNote({required NoteModel note});
 
   Future<Either<ApiError, bool>> deleteNote({required int noteId});
+
+  Future<void> incrementFavoriteCount();
+
+  Future<void> decrementFavoriteCount();
 }

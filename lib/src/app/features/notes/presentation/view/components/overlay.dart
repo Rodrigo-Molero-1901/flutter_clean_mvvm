@@ -4,6 +4,8 @@ extension _OverlayExtension on NotesOverlay {
   void showOverlay(BuildContext context) {
     switch (this) {
       case CreateNoteOverlay():
+      case IncreaseFavoriteCountOverlay():
+      case DecreaseFavoriteCountOverlay():
     }
   }
 }

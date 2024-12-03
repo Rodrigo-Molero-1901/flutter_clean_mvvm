@@ -4,8 +4,10 @@ import 'package:safe_extensions/safe_extensions.dart';
 
 import '../../domain/models/note_model.dart';
 import '../../domain/usecases/create_note.dart';
+import '../../domain/usecases/decrease_count.dart';
 import '../../domain/usecases/delete_note.dart';
 import '../../domain/usecases/get_notes.dart';
+import '../../domain/usecases/increase_count.dart';
 import 'viewmodels/notes_view_model.dart';
 
 part 'notes_state.dart';
@@ -15,14 +17,20 @@ class NotesCubit extends Cubit<NotesState> {
   final GetNotesUseCase _getNotesUseCase;
   final CreateNoteUseCase _createNoteUseCase;
   final DeleteNoteUseCase _deleteNoteUseCase;
+  final IncreaseCountUseCase _increaseCountUseCase;
+  final DecreaseCountUseCase _decreaseCountUseCase;
 
   NotesCubit({
     required GetNotesUseCase getNotesUseCase,
     required CreateNoteUseCase createNoteUseCase,
     required DeleteNoteUseCase deleteNoteUseCase,
+    required IncreaseCountUseCase increaseCountUseCase,
+    required DecreaseCountUseCase decreaseCountUseCase,
   })  : _getNotesUseCase = getNotesUseCase,
         _createNoteUseCase = createNoteUseCase,
         _deleteNoteUseCase = deleteNoteUseCase,
+        _increaseCountUseCase = increaseCountUseCase,
+        _decreaseCountUseCase = decreaseCountUseCase,
         super(NotesInitial());
 
   var _notes = <NoteModel>[];
@@ -97,5 +105,15 @@ class NotesCubit extends Cubit<NotesState> {
   void deleteNote({required int notePosition}) {
     _deleteNote(_notes[notePosition].id);
     _emitMain();
+  }
+
+  Future<void> increaseFavoriteCount() async {
+    await _increaseCountUseCase.call();
+    _emitMain(overlay: IncreaseFavoriteCountOverlay());
+  }
+
+  Future<void> decreaseFavoriteCount() async {
+    await _decreaseCountUseCase.call();
+    _emitMain(overlay: DecreaseFavoriteCountOverlay());
   }
 }

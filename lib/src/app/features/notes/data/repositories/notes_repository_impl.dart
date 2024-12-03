@@ -4,20 +4,23 @@ import 'package:fpdart/fpdart.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../domain/repositories/notes_repository.dart';
+import '../sources/local/notes_local_data_source.dart';
 import '../sources/remote/notes_remote_data_source.dart';
 
 @Injectable(as: NotesRepository)
 class NotesRepositoryImpl implements NotesRepository {
-  final NotesRemoteDataSource _source;
+  final NotesRemoteDataSource _remoteSource;
+  final NotesLocalDataSource _localSource;
 
   NotesRepositoryImpl(
-    this._source,
+    this._remoteSource,
+    this._localSource,
   );
 
   @override
   Future<Either<ApiError, List<NoteModel>>> getNotes() async {
     try {
-      final notes = await _source.getNotes();
+      final notes = await _remoteSource.getNotes();
       return Right(notes);
     } catch (e) {
       return Left(e as ApiError);
@@ -28,7 +31,7 @@ class NotesRepositoryImpl implements NotesRepository {
   Future<Either<ApiError, NoteModel>> createNote(
       {required NoteModel note}) async {
     try {
-      final createdNote = await _source.createNote(note: note);
+      final createdNote = await _remoteSource.createNote(note: note);
       return Right(createdNote);
     } catch (e) {
       return Left(e as ApiError);
@@ -38,10 +41,20 @@ class NotesRepositoryImpl implements NotesRepository {
   @override
   Future<Either<ApiError, bool>> deleteNote({required int noteId}) async {
     try {
-      final noteWasDeleted = await _source.deleteNote(noteId: noteId);
+      final noteWasDeleted = await _remoteSource.deleteNote(noteId: noteId);
       return Right(noteWasDeleted);
     } catch (e) {
       return Left(e as ApiError);
     }
+  }
+
+  @override
+  Future<void> incrementFavoriteCount() async {
+    await _localSource.incrementFavoriteCount();
+  }
+
+  @override
+  Future<void> decrementFavoriteCount() async {
+    await _localSource.decrementFavoriteCount();
   }
 }
