@@ -1,3 +1,4 @@
+import 'package:flutter_clean_mvvm/src/core/network/error/api_error.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:injectable/injectable.dart';
 
@@ -12,7 +13,7 @@ class GetNotesUseCase {
     this._repository,
   );
 
-  Future<Either<void, List<NoteModel>>> call() async {
+  Future<Either<ApiError, List<NoteModel>>> call() async {
     return await _repository.getNotes();
   }
 }

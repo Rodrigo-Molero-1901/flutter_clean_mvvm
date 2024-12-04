@@ -1,3 +1,4 @@
+import 'package:flutter_clean_mvvm/src/core/network/error/api_error.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:injectable/injectable.dart';
 
@@ -11,7 +12,7 @@ class DeleteNoteUseCase {
     this._repository,
   );
 
-  Future<Either<void, bool>> call({required int noteId}) async {
+  Future<Either<ApiError, bool>> call({required int noteId}) async {
     return await _repository.deleteNote(noteId: noteId);
   }
 }

@@ -1,3 +1,4 @@
+import 'package:flutter_clean_mvvm/src/core/network/error/api_error.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:injectable/injectable.dart';
 
@@ -12,7 +13,7 @@ class CreateNoteUseCase {
     this._repository,
   );
 
-  Future<Either<void, NoteModel>> call({required NoteModel note}) async {
+  Future<Either<ApiError, NoteModel>> call({required NoteModel note}) async {
     return await _repository.createNote(note: note);
   }
 }
