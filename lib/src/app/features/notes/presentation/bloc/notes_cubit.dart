@@ -89,7 +89,7 @@ class NotesCubit extends Cubit<NotesState> {
   void _emitLoading() => emit(NotesLoading());
 
   void onCreateNoteTapped() {
-    _emitMain(overlay: CreateNoteOverlay());
+    _emitMain(overlay: CreateNoteFormOverlay());
   }
 
   void createNote({required String title, required String content}) {
