@@ -13,5 +13,11 @@
   "error_dialog_title": "Error",
   "error_dialog_content": "Hubo un problema. Intente más tarde.",
   "increased_count": "Contador de favoritos subió",
-  "decreased_count": "Contador de favoritos bajó"
+  "decreased_count": "Contador de favoritos bajó",
+  "profile_title": "Mi perfil",
+  "name_information_header": "Nombres:",
+  "name_information": "Rodrigo Molero",
+  "email_information_header": "Correo:",
+  "email_information": "mobile.ramc.soft@gmail.com",
+  "exit_button": "Salir"
 }

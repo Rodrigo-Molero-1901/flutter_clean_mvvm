@@ -37,8 +37,8 @@ class _NotesView extends StatelessWidget {
           onDeleteIconTapped: () => cubit.deleteNote(notePosition: index),
           onFavoriteIconTapped: (isFavorite) {
             isFavorite
-                ? cubit.decreaseFavoriteCount()
-                : cubit.increaseFavoriteCount();
+                ? cubit.increaseFavoriteCount()
+                : cubit.decreaseFavoriteCount();
           },
         );
       },

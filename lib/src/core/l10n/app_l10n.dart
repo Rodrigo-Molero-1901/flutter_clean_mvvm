@@ -175,6 +175,42 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Contador de favoritos bajó'**
   String get decreased_count;
+
+  /// No description provided for @profile_title.
+  ///
+  /// In es, this message translates to:
+  /// **'Mi perfil'**
+  String get profile_title;
+
+  /// No description provided for @name_information_header.
+  ///
+  /// In es, this message translates to:
+  /// **'Nombres:'**
+  String get name_information_header;
+
+  /// No description provided for @name_information.
+  ///
+  /// In es, this message translates to:
+  /// **'Rodrigo Molero'**
+  String get name_information;
+
+  /// No description provided for @email_information_header.
+  ///
+  /// In es, this message translates to:
+  /// **'Correo:'**
+  String get email_information_header;
+
+  /// No description provided for @email_information.
+  ///
+  /// In es, this message translates to:
+  /// **'mobile.ramc.soft@gmail.com'**
+  String get email_information;
+
+  /// No description provided for @exit_button.
+  ///
+  /// In es, this message translates to:
+  /// **'Salir'**
+  String get exit_button;
 }
 
 class _AppLocalizationsDelegate

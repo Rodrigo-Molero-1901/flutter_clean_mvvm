@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import 'src/app/features/landing/presentation/view/landing_page.dart';
 import 'src/app/features/notes/presentation/view/notes_page.dart';
+import 'src/app/features/profile/presentation/view/profile_page.dart';
 import 'src/core/di/injection.dart';
 import 'src/core/l10n/app_l10n.dart';
 import 'src/core/router/page_routes.dart';
@@ -39,6 +40,12 @@ class _FlutterCleanMVVMState extends State<FlutterCleanMVVM> {
         path: PageRoutes.pathNotesPage,
         builder: (context, state) {
           return injector<NotesPage>();
+        },
+      ),
+      GoRoute(
+        path: PageRoutes.pathProfilePage,
+        builder: (context, state) {
+          return injector<ProfilePage>();
         },
       ),
     ],

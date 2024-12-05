@@ -47,4 +47,22 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get decreased_count => 'Contador de favoritos bajó';
+
+  @override
+  String get profile_title => 'Mi perfil';
+
+  @override
+  String get name_information_header => 'Nombres:';
+
+  @override
+  String get name_information => 'Rodrigo Molero';
+
+  @override
+  String get email_information_header => 'Correo:';
+
+  @override
+  String get email_information => 'mobile.ramc.soft@gmail.com';
+
+  @override
+  String get exit_button => 'Salir';
 }

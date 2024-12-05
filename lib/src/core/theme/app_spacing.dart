@@ -12,4 +12,6 @@ abstract class AppSpacing {
   static const double spacing3x = 24;
   static const double spacing3Dot5x = 28;
   static const double spacing4x = 32;
+  static const double spacing5x = 40;
+  static const double spacing6x = 48;
 }

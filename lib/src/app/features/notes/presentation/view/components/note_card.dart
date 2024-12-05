@@ -11,21 +11,21 @@ class _NoteCard extends StatefulWidget {
     required this.onFavoriteIconTapped,
   });
 
+  static const _cardHeight = 95.0;
+  static const _cardWidth = double.infinity;
+
   @override
   State<_NoteCard> createState() => _NoteCardState();
 }
 
 class _NoteCardState extends State<_NoteCard> {
-  static const _cardHeight = 95.0;
-  static const _cardWidth = double.infinity;
-
   bool _isFavorite = false;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: _cardHeight,
-      width: _cardWidth,
+      height: _NoteCard._cardHeight,
+      width: _NoteCard._cardWidth,
       padding: const EdgeInsets.symmetric(
         horizontal: AppDimensions.defaultHorizontalPadding,
       ),
@@ -64,10 +64,10 @@ class _NoteCardState extends State<_NoteCard> {
           ),
           IconButton(
             onPressed: () {
-              widget.onFavoriteIconTapped.call(_isFavorite);
               setState(() {
                 _isFavorite = !_isFavorite;
               });
+              widget.onFavoriteIconTapped.call(_isFavorite);
             },
             icon: Icon(
               _isFavorite ? Icons.favorite : Icons.favorite_border_outlined,

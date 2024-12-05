@@ -60,24 +60,27 @@ class _NotesPageState extends State<NotesPage> {
         }
       },
       builder: (context, state) {
-        return Scaffold(
-          appBar: _AppBar(
-            cubit: _cubit,
+        return PopScope(
+          canPop: false,
+          child: Scaffold(
+            appBar: _AppBar(
+              cubit: _cubit,
+            ),
+            floatingActionButton: (state is NotesMain)
+                ? FloatingActionButton(
+                    onPressed: _cubit.onCreateNoteTapped,
+                    child: const Icon(Icons.add),
+                  )
+                : null,
+            body: switch (state) {
+              NotesInitial() => const SizedBox.shrink(),
+              NotesLoading() => const _NotesLoadingView(),
+              NotesMain(:final viewModel) => _NotesView(
+                  cubit: _cubit,
+                  viewModel: viewModel,
+                ),
+            },
           ),
-          floatingActionButton: (state is NotesMain)
-              ? FloatingActionButton(
-                  onPressed: _cubit.onCreateNoteTapped,
-                  child: const Icon(Icons.add),
-                )
-              : null,
-          body: switch (state) {
-            NotesInitial() => const SizedBox.shrink(),
-            NotesLoading() => const _NotesLoadingView(),
-            NotesMain(:final viewModel) => _NotesView(
-                cubit: _cubit,
-                viewModel: viewModel,
-              ),
-          },
         );
       },
     );

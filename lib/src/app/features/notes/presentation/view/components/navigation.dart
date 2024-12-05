@@ -8,7 +8,7 @@ extension _NavigationExtension on NotesNavigation {
       // case NoteDetailsNavigation(:final noteId):
       //   context.push(PageRoutes.pathNoteDetailsPage, extra: noteId);
       case ExitNavigation():
-        context.pop();
+        context.pushReplacement(PageRoutes.pathLandingPage);
     }
   }
 }

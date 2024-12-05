@@ -104,6 +104,10 @@ class NotesCubit extends Cubit<NotesState> {
     );
   }
 
+  void onExitTapped() {
+    _emitMain(navigation: ExitNavigation());
+  }
+
   void onProfileTapped() {
     _emitMain(navigation: ProfileNavigation());
   }

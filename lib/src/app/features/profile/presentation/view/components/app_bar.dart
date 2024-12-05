@@ -1,7 +1,7 @@
-part of '../notes_page.dart';
+part of '../profile_page.dart';
 
 class _AppBar extends StatelessWidget implements PreferredSizeWidget {
-  final NotesCubit cubit;
+  final ProfileCubit cubit;
 
   const _AppBar({
     required this.cubit,
@@ -14,22 +14,14 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       scrolledUnderElevation: 0,
       title: Text(
-        l10n.notes_title,
+        l10n.profile_title,
       ),
       leading: IconButton(
-        onPressed: cubit.onExitTapped,
-        icon: const Icon(
-          Icons.exit_to_app,
+        onPressed: context.pop,
+        icon: Icon(
+          Platform.isIOS ? Icons.arrow_back_ios_new : Icons.arrow_back,
         ),
       ),
-      actions: [
-        IconButton(
-          onPressed: cubit.onProfileTapped,
-          icon: const Icon(
-            Icons.person,
-          ),
-        ),
-      ],
     );
   }
 
