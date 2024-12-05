@@ -92,11 +92,89 @@ abstract class AppLocalizations {
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[Locale('es')];
 
+  /// No description provided for @landing_description.
+  ///
+  /// In es, this message translates to:
+  /// **'¡Bienvenid@!\n\nEsta aplicación ha sido creada como un proyecto para demostrar cómo una arquitectura bien estructurada puede ofrecer una experiencia funcional y fluida. Aquí podrás gestionar tus notas de manera sencilla, mientras exploras un diseño limpio que conecta cada capa de la app: desde la presentación hasta la obtención de datos. Espero que este proyecto te inspire y, sobre todo, sea útil para aprender y poner en práctica ideas que potencien tus propias creaciones. ¡Gracias por unirte a este viaje!'**
+  String get landing_description;
+
+  /// No description provided for @continue_button.
+  ///
+  /// In es, this message translates to:
+  /// **'Continuar'**
+  String get continue_button;
+
   /// No description provided for @notes_title.
   ///
   /// In es, this message translates to:
   /// **'Lista de notas'**
   String get notes_title;
+
+  /// No description provided for @notes_empty_list.
+  ///
+  /// In es, this message translates to:
+  /// **'¡Ups! Parece que todavía no tienes ninguna nota'**
+  String get notes_empty_list;
+
+  /// No description provided for @create_note_dialog_title.
+  ///
+  /// In es, this message translates to:
+  /// **'Nueva nota'**
+  String get create_note_dialog_title;
+
+  /// No description provided for @title_field.
+  ///
+  /// In es, this message translates to:
+  /// **'Título'**
+  String get title_field;
+
+  /// No description provided for @content_field.
+  ///
+  /// In es, this message translates to:
+  /// **'Contenido'**
+  String get content_field;
+
+  /// No description provided for @cancel_button.
+  ///
+  /// In es, this message translates to:
+  /// **'Cancelar'**
+  String get cancel_button;
+
+  /// No description provided for @add_button.
+  ///
+  /// In es, this message translates to:
+  /// **'Agregar'**
+  String get add_button;
+
+  /// No description provided for @ok_button.
+  ///
+  /// In es, this message translates to:
+  /// **'Ok'**
+  String get ok_button;
+
+  /// No description provided for @error_dialog_title.
+  ///
+  /// In es, this message translates to:
+  /// **'Error'**
+  String get error_dialog_title;
+
+  /// No description provided for @error_dialog_content.
+  ///
+  /// In es, this message translates to:
+  /// **'Hubo un problema. Intente más tarde.'**
+  String get error_dialog_content;
+
+  /// No description provided for @increased_count.
+  ///
+  /// In es, this message translates to:
+  /// **'Contador de favoritos subió'**
+  String get increased_count;
+
+  /// No description provided for @decreased_count.
+  ///
+  /// In es, this message translates to:
+  /// **'Contador de favoritos bajó'**
+  String get decreased_count;
 }
 
 class _AppLocalizationsDelegate

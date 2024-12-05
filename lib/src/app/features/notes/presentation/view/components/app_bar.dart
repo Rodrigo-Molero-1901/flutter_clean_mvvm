@@ -12,9 +12,18 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
     final l10n = context.l10n;
 
     return AppBar(
+      scrolledUnderElevation: 0,
       title: Text(
         l10n.notes_title,
       ),
+      actions: [
+        IconButton(
+          onPressed: cubit.onProfileTapped,
+          icon: const Icon(
+            Icons.person,
+          ),
+        ),
+      ],
     );
   }
 

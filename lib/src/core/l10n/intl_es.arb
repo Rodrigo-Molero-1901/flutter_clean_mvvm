@@ -1,4 +1,17 @@
 {
-     "@@locale": "es",
-    "notes_title": "Lista de notas"
+  "@@locale": "es",
+  "landing_description": "¡Bienvenid@!\n\nEsta aplicación ha sido creada como un proyecto para demostrar cómo una arquitectura bien estructurada puede ofrecer una experiencia funcional y fluida. Aquí podrás gestionar tus notas de manera sencilla, mientras exploras un diseño limpio que conecta cada capa de la app: desde la presentación hasta la obtención de datos. Espero que este proyecto te inspire y, sobre todo, sea útil para aprender y poner en práctica ideas que potencien tus propias creaciones. ¡Gracias por unirte a este viaje!",
+  "continue_button": "Continuar",
+  "notes_title": "Lista de notas",
+  "notes_empty_list": "¡Ups! Parece que todavía no tienes ninguna nota",
+  "create_note_dialog_title": "Nueva nota",
+  "title_field": "Título",
+  "content_field": "Contenido",
+  "cancel_button": "Cancelar",
+  "add_button": "Agregar",
+  "ok_button": "Ok",
+  "error_dialog_title": "Error",
+  "error_dialog_content": "Hubo un problema. Intente más tarde.",
+  "increased_count": "Contador de favoritos subió",
+  "decreased_count": "Contador de favoritos bajó"
 }
