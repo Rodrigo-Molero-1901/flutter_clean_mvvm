@@ -59,9 +59,10 @@ class NotesCubit extends Cubit<NotesState> {
     final response = await _createNoteUseCase.call(note: note);
     response.fold(
       (error) {
-        // _emitMain(overlay: ServiceErrorOverlay());
-        _notes.add(note);
-        _emitMain();
+        _emitMain(overlay: ServiceErrorOverlay());
+        // Remove comment to add functionality due to unexisting services
+        // _notes.add(note);
+        // _emitMain();
       },
       (createdNote) {
         _notes.add(createdNote);
@@ -74,9 +75,10 @@ class NotesCubit extends Cubit<NotesState> {
     final response = await _deleteNoteUseCase.call(noteId: noteId.safeValue);
     response.fold(
       (error) {
-        // _emitMain(overlay: ServiceErrorOverlay());
-        _notes.removeWhere((note) => note.id == noteId);
-        _emitMain();
+        _emitMain(overlay: ServiceErrorOverlay());
+        // Remove comment to add functionality due to unexisting services
+        // _notes.removeWhere((note) => note.id == noteId);
+        // _emitMain();
       },
       (noteDeleted) {
         _notes.removeWhere((note) => note.id == noteId);
